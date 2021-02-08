@@ -28,5 +28,15 @@ function loadItems() {
             }
         }
     }
+
+    let buttons = Array.from(document.getElementsByClassName('poll__answer'));
+    for (let i = 0; i < buttons.length; i++) {
+        const element = buttons[i];
+        element.addEventListener('click', clickButton);
+    }
+}
+
+function clickButton() {
+    alert(`Спасибо. Ваш голос защитан! Ваш ответ: ${this.innerText}`);
 }
 xhr.addEventListener('readystatechange', loadItems);
